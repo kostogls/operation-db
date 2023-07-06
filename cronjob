@@ -1,0 +1,1 @@
+0 0 1 * * python /main/main.py >> /var/log/cron.log 2>&1
