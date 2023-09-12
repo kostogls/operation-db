@@ -449,17 +449,20 @@ def get_feature_type(feature, all_features=False):
 
 	FEATURE_TYPES = dict()
 	# binary features are included in categorical features
-	FEATURE_TYPES['categorical'] = ['AS_rank_source', 'AS_rank_iso', 'AS_rank_continent', 'is_personal_AS',
-									'peeringDB_info_ratio',
-									'peeringDB_info_traffic', 'peeringDB_info_scope', 'peeringDB_info_type',
+	FEATURE_TYPES['categorical'] = ['AS_rank_continent', 'AS_rank_iso', 'AS_rank_source', 'ASDB_C1L1',
+									'is_personal_AS','peeringDB_info_ratio',
+									'peeringDB_info_scope', 'peeringDB_info_traffic', 'peeringDB_info_type',
 									'peeringDB_policy_general', 'is_ris_peer_v4',
-									'is_ris_peer_v6', 'is_routeviews_peer', 'is_in_peeringDB', 'ASDB_C1L1', 'ASDB_C1L2']
+									'is_ris_peer_v6', 'is_routeviews_peer', 'is_in_peeringDB', 'ASDB_C1L2']
+
 	FEATURE_TYPES['numerical'] = ['AS_rank_numberAsns', 'AS_rank_numberPrefixes', 'AS_rank_numberAddresses',
 								  'AS_rank_total',
 								  'AS_rank_customer', 'AS_rank_peer', 'AS_rank_provider', 'peeringDB_ix_count',
 								  'peeringDB_fac_count', 'AS_hegemony',
 								  'peeringDB_info_prefixes4', 'peeringDB_info_prefixes6', 'nb_atlas_probes_v4',
 								  'nb_atlas_probes_v6', 'cti_top', 'cti_origin']
+
+
 	FEATURE_TYPES['ordinal'] = ['AS_rank_rank']
 	FEATURE_TYPES['other'] = ['AS_rank_longitude', 'AS_rank_latitude', 'peeringDB_created']
 
@@ -596,7 +599,7 @@ def get_features_dict_for_visualizations():
 		'AS_rank_provider': '#neighbors (providers)',
 		# IXP related
 		# 'is_in_peeringDB': 'In PeeringDB',
-		'peeringDB_ix_count': '#IXP (PeeringDB)',
+		'peeringDB_ix_count': '#IXPs (PeeringDB)',
 		'peeringDB_fac_count': '#facilities (PeeringDB)',
 		'peeringDB_policy_general': 'Peering policy (PeeringDB)',
 		# Network type

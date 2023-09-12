@@ -31,8 +31,8 @@ def get_path(date):
     ROUTEVIEWS_PEERS = FILES_LOCATION + 'RouteViews_{}.txt'.format(date)
     AS_RELATIONSHIPS = FILES_LOCATION + 'AS_relationships_{}.txt'.format(date)
     ASDB_PATH = FILES_LOCATION + 'ASDB_{}.csv'.format(date)
-    ORIGIN_PATH = FILES_LOCATION + 'CTI_origin_{}.csv'.format(date)
-    TOP_PATH = FILES_LOCATION + 'CTI_top_{}.csv'.format(date)
+    ORIGIN_PATH = FILES_LOCATION + 'CTI_origin.csv'.format(date)
+    TOP_PATH = FILES_LOCATION + 'CTI_top.csv'.format(date)
     BGPTOOLS_PATH = FILES_LOCATION + 'bgptools_{}.csv'.format(date)
     BGPTOOLS_v4_PATH = FILES_LOCATION + 'bgptools_v4_{}.csv'.format(date)
     BGPTOOLS_v6_PATH = FILES_LOCATION + 'bgptools_v6_{}.csv'.format(date)
@@ -526,8 +526,7 @@ def compare_datasets(filename):
     return df
 
 
-ALL_DATASETS_changes = ['AS_hegemony', 'AS_relationships', 'ASDB', 'ASrank', 'bgptools', 'bgp_perso', 'CTI_origin',
-                        'CTI_top',
+ALL_DATASETS_changes = ['AS_hegemony', 'AS_relationships', 'ASDB', 'ASrank', 'bgptools', 'bgp_perso',
                         'PeeringDB', 'RIPE_Atlas_probes', 'RIPE_RIS_collectors', 'RouteViews']
 
 for ds in ALL_DATASETS_changes:

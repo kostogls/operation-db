@@ -61,6 +61,10 @@ network_sets_dict['bgptools (v4)'] = df.loc[(df['is_bgptools_peer_v4']>0)]
 network_sets_dict['bgptools (v6)'] = df.loc[(df['is_bgptools_peer_v6']>0)]
 network_sets_dict['RIPE RIS + RouteViews (all)']= df.loc[(df['is_ris_peer_v4']>0) | (df['is_ris_peer_v6']>0) | (df['is_routeviews_peer']>0)]
 
+RV_dict = {"RouteViews": list(network_sets_dict['RouteViews (all)'].index)}
+with open("./rv_asnlist.json", "w") as outfile:
+    json.dump(RV_dict, outfile)
+
 ris_peer_ip2asn, ris_peer_ip2rrc = get_ripe_ris_data()
 rrc2asn_dict = defaultdict(list)
 for ip, rrc in ris_peer_ip2rrc.items():
@@ -110,10 +114,10 @@ SAVE_PLOTS_DISTRIBUTION_FNAME_FORMAT = './figures/Fig_{}_{}'
 SAVE_PLOTS_DISTRIBUTION_LIN_FNAME_FORMAT = './figures_linspace/Fig_{}_{}'
 
 network_sets_dict_plots = {'All ASes': network_sets_dict['all'],
-                           'RIPE Atlas': network_sets_dict['RIPE Atlas (all)'],
-                           'RIPE RIS': network_sets_dict['RIPE RIS (all)'],
+                           'Atlas': network_sets_dict['RIPE Atlas (all)'],
+                           'RIS': network_sets_dict['RIPE RIS (all)'],
                            'RouteViews': network_sets_dict['RouteViews (all)'],
-                           'RIPE RIS + RouteViews': network_sets_dict['RIPE RIS + RouteViews (all)'],
+                           'RIS&RouteViews': network_sets_dict['RIPE RIS + RouteViews (all)'],
                            'BGPtools': network_sets_dict['bgptools (all)']}
 
 # print(network_sets_dict_plots)
