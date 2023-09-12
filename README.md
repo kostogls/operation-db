@@ -1,12 +1,12 @@
 # operation-db
 operationalization of ai4netmon project
 
-The main script that runs the entire code is "main.py", that can be executed with: 
+The main script that runs the entire code is "main.py".
+The code in the repo can be executed by downloading the repo, opening a terminal inside the directory that the repo is saved, and run the command: 
 
   ```
 docker-compose up
   ```
-ran in the terminal of the repo directory. 
 
 ## Repo description
 
